@@ -39,7 +39,3 @@ td.course {
 .lab{
     color: red;
 }
-td:hover{
-    background-color: black;
-    color: white;
-}
