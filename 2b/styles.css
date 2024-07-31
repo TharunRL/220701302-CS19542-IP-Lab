@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.page{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+.links{
+    min-width: 220px;
+    background-color:purple;
+    height:100vh;
+}
+ul {
+    list-style-type: none;
+}
+ul>li{
+    padding: 10px;
+}
+.rec>*{
+    width:"100%";
+}
+.rec{
+    background-color: purple;
+    height:auto;
+    margin: auto;
+    text-align: center;
+    padding:10px;
+    color: white;
+    display:flex;
+    flex-direction: column;
+}
+.address{
+    height:50px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+.rec>h1{
+    text-decoration: underline;
+}
+a{
+    text-decoration:none;
+    color: white;
+}
+.content>*{
+    padding: 10px;
+}
+a:focus{
+    background-color: yellow;
+    color:black;
+}
