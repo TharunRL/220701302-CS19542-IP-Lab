@@ -49,11 +49,13 @@ ul>li{
 a{
     text-decoration:none;
     color: white;
+    display:inline-block; 
+    height:100%; 
+    width:100%;
 }
 .content>*{
     padding: 10px;
 }
-a:focus{
-    background-color: yellow;
-    color:black;
-}
+body {
+    font-family: Arial, sans-serif;
+  }
