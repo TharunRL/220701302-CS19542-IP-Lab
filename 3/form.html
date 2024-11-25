@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+        <form method="post" onsubmit="return eventHandler(this)" onreset="">
+            <div class="row" style="padding-top:20px;"><div class="label"><label for="student_name">Student Name:</label></div>
+            <div class="input"><input type="text" id="student_name" name="student_name"></div>
+            
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="rollno">Roll Number:</label></div><div class="input"><input type="text" id="rollno" name="rollno" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="gender">Gender:</label></div>
+            <div class="input" id="genders">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label></div> 
+            </div><br>
+        
+            
+        <div class="row"><div class="label"><label for="year">Year:</label></div>
+        <div class="input"><input type="number" id="year" name="year"  required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="department">Department:</label></div><div class="input"><input type="text" id="department" name="department" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="section">Section:</label></div><div class="input"><input type="text" id="section" name="section" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="mobile_no">Mobile Number:</label></div><div class="input"><input type="tel" id="mobile_no" name="mobile_no" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="email_id">E-Mail ID:</label></div><div class="input"><input type="email" id="email_id" name="email_id" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="address">Address:</label></div><div class="input"><textarea id="address" name="address" rows="4" cols="50" required></textarea></div>
+            </textarea></div><br>
+            
+            <div class="row"><div class="label"><label for="cname">Course Name:</label></div><div class="input"><input type="text" id="cname" name="cname" required></div>
+            </div><br>
+            
+            <div class="row"> <div class="label"><label for="ccode">Course Code:</label></div>
+            <div class="input"><input type="text" id="ccode" name="ccode" required></div>
+            </div><br>
+            
+            <div class="row"><div class="label"><label for="credits">Credits:</label></div>
+            <div class="input"><input type="text" id="credits" name="credits"  required></div>
+            </div><br>
+            
+            <div class="row" id="buttons"><input class="button" type="submit" value="Submit">
+            <input class="button" type="reset" value="Reset"></div>
+        </form>
+    </div>
+    <script>
+        function eventHandler(form){
+            var name = form.student_name.value;
+            var rollno = form.rollno.value;
+            var male = form.male.checked;
+            var female = form.female.checked;
+            var other = form.other.checked;
+            var year = parseInt(form.year.value);
+            var dept = form.department.value;
+            var sec = form.section.value;
+            var mobile = form.mobile_no.value;
+            var email = form.email_id.value;
+            var address = form.address.value;
+            var cname = form.cname.value;
+            var ccode = form.ccode.value;
+            var credits = form.credits.value;
+
+            if (name.length <= 3) {
+                window.alert("Name is too short! should be greater than 3!");
+            } else if (rollno.length != 9) {
+                window.alert("Roll number is invalid! Roll number length is not 9!");
+            } else if (!male && !female && !other) {
+                window.alert("Specify Gender!");
+            } else if (isNaN(year) || year < 2000 || year > 2024) {
+                window.alert("Enter the correct year! 2000-2024");
+            } else if (dept.trim() === "") {
+                window.alert("Enter the department correctly!");
+            } else if (sec.length != 1 || isNaN(sec)==false) {
+                window.alert("Section is Invalid! Section should be a single character");
+            } else if (mobile.length != 10 || isNaN(mobile)) {
+                window.alert("Mobile number is entered incorrectly! Length should be 10");
+            } else if (!email.includes('@') || !email.includes('.')) {
+                window.alert("Email is invalid! Email should include @ and .");
+            } else if (address.trim() === "") {
+                window.alert("Address cannot be empty!");
+            } else if (cname.trim() === "") {
+                window.alert("Course Name cannot be empty!");
+            } else if (ccode.trim() === ""||ccode.length!=7 || !ccode.startsWith("CS") ||isNaN(document.getElementById("ccode").substring(2,7)) ) {
+                window.alert("Course code should start with CS ,followed by 5 digits!");
+            } else if (credits.length!=1 || isNaN(credits)==true) {
+                window.alert("Credits should be single digit !");
+            } else {
+                window.alert("Form submitted successfully!");
+
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body{
+    display :flex;
+    flex-direction: column;
+    background-color: #222831;
+}
+.label{
+    width:20%;
+    color: #EEEEEE;
+    font-size: x-large;
+    min-width: 200px;
+}
+label{
+    color: #EEEEEE;
+}
+
+.input{
+    min-width: 200px;
+    max-width: 600px;
+    width: inherit;
+}
+input,textarea{
+    width: 100%;
+    border-radius: 20px 5px 20px 5px;
+    height:40px;
+    font-size: large;
+}
+.row{
+    width:100%;
+    display :flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.button{
+    width:75px;
+    height:40px;
+    background-color: #00ADB5;
+    color: black;
+    border: 0;
+    border-radius: 10px;
+    font-size: medium;
+    margin:10px;
+}
+#genders input{
+    width:auto;
+    height: auto;
+    border: 0;
+}
+
+.form{
+    background-color: #393E46;
+    margin: 0;
+    border: 0;
+    border-radius: 15px;
+}
+
+
